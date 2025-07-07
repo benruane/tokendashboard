@@ -31,6 +31,16 @@ export default function Dashboard() {
       {showToast && <ToastNotification message={toastMessage} />}
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
+        {/* Title Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            SEDA Data Request Dashboard
+          </h1>
+          <p className="text-xl md:text-2xl text-seda-light-blue/80 font-medium max-w-3xl mx-auto leading-relaxed">
+            Visualize data request volume and costs across different time periods.
+          </p>
+        </div>
+        
         {/* Letterbox Parameters Panel (full width) */}
         <div className="mb-8">
           <ParametersPanel 

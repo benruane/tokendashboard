@@ -13,6 +13,7 @@ module.exports = {
         'seda-neon-teal': '#00f5d4',
         'seda-mint': '#7fffd4',
         'seda-blue': '#0066ff',
+        'seda-light-blue': '#4da6ff',
         'seda-dark-blue': '#001a33',
         'seda-glass': 'rgba(255, 255, 255, 0.05)',
         'seda-glass-hover': 'rgba(255, 255, 255, 0.1)',
