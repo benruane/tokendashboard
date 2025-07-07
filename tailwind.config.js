@@ -50,6 +50,13 @@ module.exports = {
         '200': '200ms',
       },
     },
+    container: {
+      center: true,
+      padding: '4rem',
+      screens: {
+        '2xl': '1280px',
+      },
+    },
   },
   plugins: [],
 } 
