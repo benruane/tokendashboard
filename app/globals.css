@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #050a14 0%, #0a0e1a 50%, #001a33 100%);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-seda-glass backdrop-blur-glass border border-white/10 rounded-xl shadow-2xl;
+    box-shadow: 0 8px 32px 0 rgba(0, 245, 212, 0.1);
+  }
+  
+  .glass-panel-hover {
+    @apply hover:bg-seda-glass-hover hover:border-seda-neon-teal/30 transition-all duration-200;
+    box-shadow: 0 8px 32px 0 rgba(0, 245, 212, 0.1);
+  }
+  
+  .glass-panel-hover:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 245, 212, 0.2);
+  }
+  
+  .neon-button {
+    @apply bg-seda-neon-teal/10 border border-seda-neon-teal/30 text-seda-neon-teal font-semibold px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  
+  .neon-button:hover {
+    @apply bg-seda-neon-teal/20 border-seda-neon-teal/50 shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+  }
+  
+  .mint-pill {
+    @apply bg-seda-mint/20 border border-seda-mint/30 text-seda-mint font-medium px-3 py-1 rounded-full text-sm;
+  }
+  
+  .slider-thumb {
+    @apply appearance-none w-6 h-6 bg-seda-neon-teal rounded-full cursor-pointer shadow-lg;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+  }
+  
+  .slider-thumb:active {
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.8);
+  }
+  
+  .chart-tooltip {
+    @apply bg-seda-glass backdrop-blur-glass border border-white/20 rounded-lg p-3 shadow-xl;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .toast-notification {
+    @apply fixed top-4 right-4 bg-seda-glass backdrop-blur-glass border border-seda-neon-teal/30 text-white px-4 py-3 rounded-lg shadow-xl z-50;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #00f5d4 0%, #7fffd4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+} 
