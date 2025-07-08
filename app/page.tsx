@@ -32,17 +32,17 @@ export default function Dashboard() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         {/* Title Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+        <div className="text-center mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
             SEDA Data Request Dashboard
           </h1>
-          <p className="text-xl md:text-2xl text-seda-light-blue/80 font-medium max-w-3xl mx-auto leading-relaxed">
-            Visualize data request volume and costs across different time periods.
+          <p className="text-lg md:text-xl text-seda-light-blue/80 font-medium max-w-2xl mx-auto leading-relaxed">
+            Simulate SEDA’s onchain economy with the data request volumes of its closest competitors.
           </p>
         </div>
         
         {/* Letterbox Parameters Panel (full width) */}
-        <div className="mb-8">
+        <div className="mb-4">
           <ParametersPanel 
             requestsPerMinute={requestsPerMinute}
             setRequestsPerMinute={setRequestsPerMinute}
@@ -51,8 +51,17 @@ export default function Dashboard() {
             setTimeRange={setTimeRange}
           />
         </div>
+        {/* Summary Cards - now above the charts */}
+        <div className="mb-4">
+          <SummaryCards 
+            requestsPerMinute={requestsPerMinute}
+            timeRange={timeRange}
+            dataRequestCost={dataRequestCost}
+            showFullValue={true}
+          />
+        </div>
         {/* Middle Row - Charts Side by Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           <RequestsChart 
             requestsPerMinute={requestsPerMinute}
             timeRange={timeRange}
@@ -64,13 +73,6 @@ export default function Dashboard() {
             dataRequestCost={dataRequestCost}
           />
         </div>
-        {/* Bottom Row - Summary Cards */}
-        <SummaryCards 
-          requestsPerMinute={requestsPerMinute}
-          timeRange={timeRange}
-          dataRequestCost={dataRequestCost}
-          showFullValue={true}
-        />
       </div>
     </div>
   )

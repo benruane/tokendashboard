@@ -62,17 +62,17 @@ export default function ParametersPanel({
             <div 
               className="absolute top-0 w-1 h-2 bg-red-500 rounded-full"
               style={{ left: `${getTickPosition(7800)}%` }}
-              title="Redstone: 7,800"
+              title="Redstone"
             />
             <div 
-              className="absolute top-0 w-1 h-2 bg-yellow-500 rounded-full"
+              className="absolute top-0 w-1 h-2 bg-blue-500 rounded-full"
               style={{ left: `${getTickPosition(28560)}%` }}
-              title="Chainlink: 28,560"
+              title="Chainlink"
             />
             <div 
-              className="absolute top-0 w-1 h-2 bg-green-500 rounded-full"
+              className="absolute top-0 w-1 h-2 bg-purple-500 rounded-full"
               style={{ left: `${getTickPosition(194444)}%` }}
-              title="Pyth: 194,444"
+              title="Pyth"
             />
           </div>
           {/* Slider Input */}
@@ -115,24 +115,21 @@ export default function ParametersPanel({
         <div className="flex flex-row gap-6 justify-center mt-2">
           <button 
             onClick={() => setRequestsPerMinute(7800)}
-            className="flex items-center gap-2 hover:text-seda-neon-teal transition-colors duration-200 cursor-pointer group"
+            className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-red-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 7800 ? 'bg-red-500/20' : 'bg-seda-glass hover:bg-red-500/20 hover:text-red-400'}`}
           >
-            <div className="w-3 h-3 bg-red-500 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-            <span className="text-gray-400 group-hover:text-seda-neon-teal">Redstone: 7,800</span>
+            <span>Redstone</span>
           </button>
           <button 
             onClick={() => setRequestsPerMinute(28560)}
-            className="flex items-center gap-2 hover:text-seda-neon-teal transition-colors duration-200 cursor-pointer group"
+            className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-blue-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 28560 ? 'bg-blue-500/20' : 'bg-seda-glass hover:bg-blue-500/20 hover:text-blue-400'}`}
           >
-            <div className="w-3 h-3 bg-yellow-500 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-            <span className="text-gray-400 group-hover:text-seda-neon-teal">Chainlink: 28,560</span>
+            <span>Chainlink</span>
           </button>
           <button 
             onClick={() => setRequestsPerMinute(194444)}
-            className="flex items-center gap-2 hover:text-seda-neon-teal transition-colors duration-200 cursor-pointer group"
+            className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-purple-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 194444 ? 'bg-purple-500/20' : 'bg-seda-glass hover:bg-purple-500/20 hover:text-purple-400'}`}
           >
-            <div className="w-3 h-3 bg-green-500 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-            <span className="text-gray-400 group-hover:text-seda-neon-teal">Pyth: 194,444</span>
+            <span>Pyth</span>
           </button>
         </div>
       </div>

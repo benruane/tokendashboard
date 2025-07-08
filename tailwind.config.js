@@ -54,7 +54,7 @@ module.exports = {
       center: true,
       padding: '4rem',
       screens: {
-        '2xl': '1280px',
+        '2xl': '1024px', // even more compact
       },
     },
   },

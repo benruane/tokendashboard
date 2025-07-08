@@ -53,34 +53,32 @@ export default function SummaryCards({
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* SEDA Delegation Card */}
-      <div className="glass-panel glass-panel-hover p-8 group">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-seda-neon-teal/10 rounded-lg group-hover:bg-seda-neon-teal/20 transition-all duration-200">
-            <Users className="w-5 h-5 text-seda-neon-teal" />
-          </div>
-          <h3 className="text-lg font-semibold text-white">USD Value of SEDA Distributed to SEDA Delegation</h3>
+      <div className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center">
+        <div className="p-2 bg-seda-neon-teal/10 rounded-lg group-hover:bg-seda-neon-teal/20 transition-all duration-200 mb-2">
+          <Users className="w-5 h-5 text-seda-neon-teal" />
         </div>
-        
+        <h3 className="text-sm md:text-base lg:text-lg font-semibold text-white mb-4">
+          USD Value of SEDA Distributed to SEDA Delegation
+        </h3>
         <div className="mb-2">
-          <div className="text-4xl font-bold text-seda-mint mb-2">
+          <div className="text-3xl md:text-4xl font-bold text-seda-mint mb-2">
             {formatCurrency(calculations.sedaDelegationValue)}
           </div>
         </div>
       </div>
 
       {/* SEDA Burned Card */}
-      <div className="glass-panel glass-panel-hover p-8 group">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-all duration-200">
-            <Flame className="w-5 h-5 text-red-400" />
-          </div>
-          <h3 className="text-lg font-semibold text-white">USD Value of SEDA Burned from the Circulating Supply</h3>
+      <div className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center">
+        <div className="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-all duration-200 mb-2">
+          <Flame className="w-5 h-5 text-red-400" />
         </div>
-        
+        <h3 className="text-sm md:text-base lg:text-lg font-semibold text-white mb-4">
+          USD Value of SEDA Burned from the Circulating Supply
+        </h3>
         <div className="mb-2">
-          <div className="text-4xl font-bold text-red-400 mb-2">
+          <div className="text-3xl md:text-4xl font-bold text-red-400 mb-2">
             {formatCurrency(calculations.sedaBurnedValue)}
           </div>
         </div>
