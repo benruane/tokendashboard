@@ -76,8 +76,10 @@ export default function Dashboard() {
         
         {/* Disclaimer */}
         <div className="text-center mt-8">
-          <p className="text-xs text-gray-500/60 max-w-2xl mx-auto leading-relaxed">
-            *Based on an average data request price of $0.05. This figure incorporates the necessary computational functions required by the SEDA network to process data requests
+          <p className="text-xs text-gray-500/60 max-w-3xl mx-auto leading-relaxed">
+            *This value represents the cost of a data request for a simple price feed with a replication factor of five. Data request cost can vary based on data source, computation, and replication factor. This value does not represent a fixed parameter for the gas required to execute a data request on the SEDA Network.
+            <br /><br />
+            **The amount of SEDA burned during a data request is a parameter that can be adjusted over time.
           </p>
         </div>
       </div>

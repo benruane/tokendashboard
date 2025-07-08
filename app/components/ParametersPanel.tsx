@@ -52,7 +52,7 @@ export default function ParametersPanel({
           <label className="block text-sm font-medium text-gray-300">
             Average Requests per Minute
           </label>
-          <span className="text-sm text-gray-400">Data request cost of $0.05<sup>*</sup></span>
+          <span className="text-sm text-gray-400">Gas Cost per Data Request: $0.005<sup>*</sup></span>
         </div>
         <div className="relative w-full">
           {/* Slider Track */}
