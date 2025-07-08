@@ -48,9 +48,12 @@ export default function ParametersPanel({
       </div>
       {/* Slider and Benchmarks Row */}
       <div className="flex flex-col gap-4 w-full">
-        <label className="block text-sm font-medium text-gray-300 mb-1">
-          Average Requests per Minute
-        </label>
+        <div className="flex justify-between items-center mb-1">
+          <label className="block text-sm font-medium text-gray-300">
+            Average Requests per Minute
+          </label>
+          <span className="text-sm text-gray-400">Data request cost of $0.05<sup>*</sup></span>
+        </div>
         <div className="relative w-full">
           {/* Slider Track */}
           <div className="relative h-2 bg-seda-dark-blue rounded-full">

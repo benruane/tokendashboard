@@ -73,6 +73,13 @@ export default function Dashboard() {
             dataRequestCost={dataRequestCost}
           />
         </div>
+        
+        {/* Disclaimer */}
+        <div className="text-center mt-8">
+          <p className="text-xs text-gray-500/60 max-w-2xl mx-auto leading-relaxed">
+            *Based on an average data request price of $0.05. This figure incorporates the necessary computational functions required by the SEDA network to process data requests
+          </p>
+        </div>
       </div>
     </div>
   )
