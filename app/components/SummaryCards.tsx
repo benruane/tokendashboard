@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { Users, Flame } from 'lucide-react'
 
 interface SummaryCardsProps {
@@ -52,48 +52,17 @@ export default function SummaryCards({
     return `$${value.toLocaleString()}`
   }
 
-  const delegationAudioRef = useRef<HTMLAudioElement>(null)
-  const burnedAudioRef = useRef<HTMLAudioElement>(null)
-
-  const playDelegationSound = () => {
-    if (delegationAudioRef.current) {
-      delegationAudioRef.current.currentTime = 0
-      delegationAudioRef.current.play()
-    }
-  }
-  const stopDelegationSound = () => {
-    if (delegationAudioRef.current) {
-      delegationAudioRef.current.pause()
-      delegationAudioRef.current.currentTime = 0
-    }
-  }
-  const playBurnedSound = () => {
-    if (burnedAudioRef.current) {
-      burnedAudioRef.current.currentTime = 0
-      burnedAudioRef.current.play()
-    }
-  }
-  const stopBurnedSound = () => {
-    if (burnedAudioRef.current) {
-      burnedAudioRef.current.pause()
-      burnedAudioRef.current.currentTime = 0
-    }
-  }
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* SEDA Delegation Card */}
       <div
         className="glass-panel p-8 group flex flex-col items-center text-center hover:bg-seda-glass-hover hover:border-seda-neon-teal/30 transition-all duration-200"
-        onMouseEnter={playDelegationSound}
-        onMouseLeave={stopDelegationSound}
       >
-        <audio ref={delegationAudioRef} src="/counting.wav" preload="auto" />
         <div className="p-2 bg-seda-neon-teal/10 rounded-lg group-hover:bg-seda-neon-teal/20 transition-all duration-200 mb-2">
           <Users className="w-5 h-5 text-seda-neon-teal" />
         </div>
         <h3 className="text-sm md:text-base lg:text-lg font-semibold text-white mb-4">
-          USD Value of SEDA Distributed to SEDA Delegation
+          Value of Gas Distributed to SEDA Network Validators
         </h3>
         <div className="mb-2">
           <div className="text-3xl md:text-4xl font-bold text-seda-mint mb-2">
@@ -110,19 +79,16 @@ export default function SummaryCards({
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(239, 68, 68, 0.2)'
-          playBurnedSound()
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(239, 68, 68, 0.1)'
-          stopBurnedSound()
         }}
       >
-        <audio ref={burnedAudioRef} src="/burn.wav" preload="auto" />
         <div className="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-all duration-200 mb-2">
           <Flame className="w-5 h-5 text-red-400" />
         </div>
         <h3 className="text-sm md:text-base lg:text-lg font-semibold text-white mb-4">
-          USD Value of SEDA Burned from the Circulating Supply
+          Value of Gas Burned by the SEDA Network
         </h3>
         <div className="mb-2">
           <div className="text-3xl md:text-4xl font-bold text-red-400 mb-2">

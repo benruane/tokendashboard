@@ -49,7 +49,7 @@ export default function ParametersPanel({
       {/* Slider and Benchmarks Row */}
       <div className="flex flex-col gap-4 w-full">
         <label className="block text-sm font-medium text-gray-300 mb-1">
-          Requests per Minute
+          Average Requests per Minute
         </label>
         <div className="relative w-full">
           {/* Slider Track */}
@@ -117,19 +117,19 @@ export default function ParametersPanel({
             onClick={() => setRequestsPerMinute(7800)}
             className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-red-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 7800 ? 'bg-red-500/20' : 'bg-seda-glass hover:bg-red-500/20 hover:text-red-400'}`}
           >
-            <span>Redstone</span>
+            <span>Competitor 1</span>
           </button>
           <button 
             onClick={() => setRequestsPerMinute(28560)}
             className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-blue-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 28560 ? 'bg-blue-500/20' : 'bg-seda-glass hover:bg-blue-500/20 hover:text-blue-400'}`}
           >
-            <span>Chainlink</span>
+            <span>Competitor 2</span>
           </button>
           <button 
             onClick={() => setRequestsPerMinute(194444)}
             className={`min-w-[8rem] flex items-center justify-center gap-2 px-4 py-2 rounded-lg border-2 border-purple-500 font-semibold text-gray-200 shadow-sm transition-colors duration-200 cursor-pointer group focus:outline-none ${requestsPerMinute === 194444 ? 'bg-purple-500/20' : 'bg-seda-glass hover:bg-purple-500/20 hover:text-purple-400'}`}
           >
-            <span>Pyth</span>
+            <span>Competitor 3</span>
           </button>
         </div>
       </div>

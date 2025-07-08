@@ -116,7 +116,7 @@ export default function ValueChart({
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <DollarSign className="w-5 h-5 text-seda-neon-teal" />
-        <h2 className="text-xl font-bold text-white">Cumulative USD Value Paid</h2>
+        <h2 className="text-xl font-bold text-white">Cumulative USD Value of Gas from Transactions</h2>
       </div>
       
       {/* Chart */}
