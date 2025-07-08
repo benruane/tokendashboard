@@ -107,11 +107,22 @@ export default function RequestsChart({
   }
 
   return (
-    <div className="glass-panel glass-panel-hover p-6">
+    <div 
+      className="glass-panel p-6 hover:bg-seda-glass-hover hover:border-blue-500/30 transition-all duration-200"
+      style={{
+        boxShadow: '0 8px 32px 0 rgba(0, 102, 255, 0.1)'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(0, 102, 255, 0.2)'
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(0, 102, 255, 0.1)'
+      }}
+    >
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <BarChart3 className="w-5 h-5" style={{ color: '#0066ff' }} />
-        <h2 className="text-xl font-bold text-white">Cumulative Data Requests</h2>
+        <h2 className="text-xl font-bold" style={{ color: '#0066ff' }}>Cumulative Data Requests</h2>
       </div>
       
       {/* Chart */}

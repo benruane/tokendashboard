@@ -84,7 +84,7 @@ export default function SummaryCards({
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* SEDA Delegation Card */}
       <div
-        className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center"
+        className="glass-panel p-8 group flex flex-col items-center text-center hover:bg-seda-glass-hover hover:border-seda-neon-teal/30 transition-all duration-200"
         onMouseEnter={playDelegationSound}
         onMouseLeave={stopDelegationSound}
       >
@@ -104,9 +104,18 @@ export default function SummaryCards({
 
       {/* SEDA Burned Card */}
       <div
-        className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center"
-        onMouseEnter={playBurnedSound}
-        onMouseLeave={stopBurnedSound}
+        className="glass-panel p-8 group flex flex-col items-center text-center hover:bg-seda-glass-hover hover:border-red-400/30 transition-all duration-200"
+        style={{
+          boxShadow: '0 8px 32px 0 rgba(239, 68, 68, 0.1)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(239, 68, 68, 0.2)'
+          playBurnedSound()
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(239, 68, 68, 0.1)'
+          stopBurnedSound()
+        }}
       >
         <audio ref={burnedAudioRef} src="/burn.wav" preload="auto" />
         <div className="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-all duration-200 mb-2">
