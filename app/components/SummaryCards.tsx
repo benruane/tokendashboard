@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 import { Users, Flame } from 'lucide-react'
 
 interface SummaryCardsProps {
@@ -52,10 +52,43 @@ export default function SummaryCards({
     return `$${value.toLocaleString()}`
   }
 
+  const delegationAudioRef = useRef<HTMLAudioElement>(null)
+  const burnedAudioRef = useRef<HTMLAudioElement>(null)
+
+  const playDelegationSound = () => {
+    if (delegationAudioRef.current) {
+      delegationAudioRef.current.currentTime = 0
+      delegationAudioRef.current.play()
+    }
+  }
+  const stopDelegationSound = () => {
+    if (delegationAudioRef.current) {
+      delegationAudioRef.current.pause()
+      delegationAudioRef.current.currentTime = 0
+    }
+  }
+  const playBurnedSound = () => {
+    if (burnedAudioRef.current) {
+      burnedAudioRef.current.currentTime = 0
+      burnedAudioRef.current.play()
+    }
+  }
+  const stopBurnedSound = () => {
+    if (burnedAudioRef.current) {
+      burnedAudioRef.current.pause()
+      burnedAudioRef.current.currentTime = 0
+    }
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* SEDA Delegation Card */}
-      <div className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center">
+      <div
+        className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center"
+        onMouseEnter={playDelegationSound}
+        onMouseLeave={stopDelegationSound}
+      >
+        <audio ref={delegationAudioRef} src="/counting.wav" preload="auto" />
         <div className="p-2 bg-seda-neon-teal/10 rounded-lg group-hover:bg-seda-neon-teal/20 transition-all duration-200 mb-2">
           <Users className="w-5 h-5 text-seda-neon-teal" />
         </div>
@@ -70,7 +103,12 @@ export default function SummaryCards({
       </div>
 
       {/* SEDA Burned Card */}
-      <div className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center">
+      <div
+        className="glass-panel glass-panel-hover p-8 group flex flex-col items-center text-center"
+        onMouseEnter={playBurnedSound}
+        onMouseLeave={stopBurnedSound}
+      >
+        <audio ref={burnedAudioRef} src="/burn.wav" preload="auto" />
         <div className="p-2 bg-red-500/10 rounded-lg group-hover:bg-red-500/20 transition-all duration-200 mb-2">
           <Flame className="w-5 h-5 text-red-400" />
         </div>
