@@ -110,7 +110,7 @@ export default function RequestsChart({
     <div className="glass-panel glass-panel-hover p-6">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <BarChart3 className="w-5 h-5 text-seda-neon-teal" />
+        <BarChart3 className="w-5 h-5" style={{ color: '#0066ff' }} />
         <h2 className="text-xl font-bold text-white">Cumulative Data Requests</h2>
       </div>
       
@@ -120,8 +120,8 @@ export default function RequestsChart({
           <AreaChart data={chartData}>
             <defs>
               <linearGradient id="requestsGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#00f5d4" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#0066ff" stopOpacity={0.1}/>
+                <stop offset="5%" stopColor="#0066ff" stopOpacity={0.5}/>
+                <stop offset="95%" stopColor="#001a33" stopOpacity={0.1}/>
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
@@ -146,11 +146,11 @@ export default function RequestsChart({
             <Area
               type="monotone"
               dataKey="requests"
-              stroke="#00f5d4"
+              stroke="#0066ff"
               strokeWidth={2}
               fill="url(#requestsGradient)"
-              dot={{ fill: '#00f5d4', strokeWidth: 2, r: 4 }}
-              activeDot={{ r: 6, stroke: '#00f5d4', strokeWidth: 2, fill: '#fff' }}
+              dot={{ fill: '#0066ff', strokeWidth: 2, r: 4 }}
+              activeDot={{ r: 6, stroke: '#0066ff', strokeWidth: 2, fill: '#fff' }}
             />
           </AreaChart>
         </ResponsiveContainer>
